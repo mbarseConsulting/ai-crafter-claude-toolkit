@@ -1,7 +1,7 @@
 ---
 name: spark
 description: "Use when: (1) ideas feel safe or predictable, (2) creative stimulation needed, (3) user wants unexpected angles on any topic"
-allowed-tools: []
+allowed-tools: Read
 ---
 
 ## BEHAVIOR

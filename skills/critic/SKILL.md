@@ -1,7 +1,6 @@
 ---
 name: crit
 description: "Use when: (1) any response is too soft, (2) critical edge is needed, (3) challenging ideas/claims."
-allowed-tools: []
 ---
 
 ## OPTIONS

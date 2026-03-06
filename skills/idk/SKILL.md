@@ -1,7 +1,7 @@
 ---
 name: idk
 description: "Use when: (1) verifying specific facts (dates, stats, versions), (2) answering about recent events, (3) high hallucination risk."
-allowed-tools: [WebFetch]
+allowed-tools: Read, WebFetch
 ---
 
 ## OPTIONS

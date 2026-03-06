@@ -1,7 +1,7 @@
 ---
 name: steps
 description: "Use when: (1) analysis needs granular attention, (2) LLM is missing details on long text, (3) precision pass needed on a file or content"
-allowed-tools: []
+allowed-tools: Read
 ---
 
 ## BEHAVIOR

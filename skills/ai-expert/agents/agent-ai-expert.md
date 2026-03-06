@@ -1,7 +1,6 @@
 ---
 name: agent-ai-expert
 description: "Advises, creates, or audits AI artifacts (skills, agents, hooks). Does not handle general coding or architecture."
-tools: []
 model: sonnet
 color: white
 ---
