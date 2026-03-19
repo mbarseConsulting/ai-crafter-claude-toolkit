@@ -5,14 +5,16 @@ description: "Use when: (1) verifying nothing was missed in recent work, (2) sel
 
 ## BEHAVIOR
 
-### 1. Gather
+### What you MUST do
+
+#### 1. Gather
 
 Look back at the last 2-3 user prompts and any modifications made (file edits, code changes, responses). Build two lists:
 
 - **ASKED:** every explicit request, constraint, preference, and detail mentioned by the user
 - **DONE:** every action taken, change made, or point addressed in response
 
-### 2. Compare
+#### 2. Compare
 
 For each item in ASKED, check against DONE:
 
@@ -20,9 +22,11 @@ For each item in ASKED, check against DONE:
 - **PARTIAL** — touched but incomplete or imprecise
 - **MISSED** — not addressed at all
 
-### 3. Report
+#### 3. Report
 
-Display only PARTIAL and MISSED items. If everything is covered, say so in one line and stop.
+Display only PARTIAL, MISSED, and PARROTED items. If everything is covered, say so in one line and stop.
+
+If there is no prior work to audit, say `[CHECK] Nothing to audit.` and stop.
 
 For each gap:
 
@@ -30,7 +34,7 @@ For each gap:
 - What was done (or not done)
 - What's still needed
 
-### 4. Detect Parroting
+#### 4. Detect Parroting
 
 Flag every instance where the response reuses the user's own words, phrasing, or structure instead of actually doing the work. Parroting is not covering — it's faking coverage.
 

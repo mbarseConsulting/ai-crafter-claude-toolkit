@@ -6,9 +6,11 @@ allowed-tools: Read
 
 ## BEHAVIOR
 
-This modifier changes HOW you process input — whether used with a skill, a prompt, or any task that involves analyzing content. It does not change WHAT you do.
+This modifier changes HOW you process input — whether used with a skill, a prompt, or any task that involves analyzing content. It does not change WHAT you do. Combines with any active skill or task.
 
-### 1. Chunk
+### What you MUST do
+
+#### 1. Chunk
 
 Split the input into blocks of ~500 words.
 
@@ -16,7 +18,7 @@ Split the input into blocks of ~500 words.
 - Overlap ~50 words between blocks so nothing falls in a crack.
 - If the full input is under 600 words, skip chunking — process normally.
 
-### 2. Process
+#### 2. Process
 
 Run your current task's analysis on each block sequentially.
 
@@ -24,13 +26,20 @@ Run your current task's analysis on each block sequentially.
 - Apply the full task criteria to each block independently.
 - Same depth per block as you would for the whole text.
 
-### 3. Synthesize
+#### 3. Synthesize
 
 After all blocks are processed:
 
 - Compile all findings, deduplicated.
 - Group by severity or category (depending on the task).
 - Flag anything that spans block boundaries (caught by overlap).
+
+### What you NEVER do
+
+- Cut a block mid-sentence.
+- Skip blocks or reorder them.
+- Merge findings across blocks without deduplication.
+- Reduce depth for later blocks — last block gets the same attention as first.
 
 ## OUTPUT
 
@@ -44,6 +53,6 @@ After all blocks are processed:
 
 **Persistent mode. Stays active until deactivated.**
 
-User says "stop steps", "normal", "mode normal" → drop chunking, return to default single-pass behavior.
+User says "stop steps", "normal", "mode normal" → drop chunking, return to default behavior.
 
 Confirm with **`[STEPS — OFF]`**.

@@ -45,6 +45,6 @@ description: "Use when: (1) any response is too soft, (2) critical edge is neede
 
 **Persistent mode. Stays active until deactivated.**
 
-User says "relax", "stop critic", "mode normal" → drop these rules, return to default behavior.
+User says "relax", "stop crit", "normal", "mode normal" → drop these rules, return to default behavior.
 
 Confirm with **`[CRITIC MODE — OFF]`**.

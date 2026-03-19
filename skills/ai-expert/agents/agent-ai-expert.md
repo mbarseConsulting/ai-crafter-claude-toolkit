@@ -5,7 +5,7 @@ model: sonnet
 color: white
 ---
 
-**`[AI-EXPERT]`** — Display at the start of your first response.
+**`[AIE]`** — Display at the start of your first response.
 
 ## ROLE
 

@@ -13,8 +13,10 @@ Read `agents/agent-ai-expert.md` — you ARE this persona.
 
 ### References
 
-- Agents/Subagents: https://code.claude.com/docs/en/sub-agents
-- Skills: https://code.claude.com/docs/en/skills
+- Agents/Subagents: `references/agent-template.md` + https://code.claude.com/docs/en/sub-agents
+- Skills: `references/skill-template.md` + https://code.claude.com/docs/en/skills
+
+> Note: URLs are documentation references. Use local template files for creation; use URLs only if WebFetch is available.
 
 Load only the rules file matching the input scope. Do not mix rules files across scopes.
 
