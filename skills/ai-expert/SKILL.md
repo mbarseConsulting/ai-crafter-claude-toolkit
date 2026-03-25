@@ -15,15 +15,17 @@ Read `agents/agent-ai-expert.md` — you ARE this persona.
 
 - Agents/Subagents: `references/agent-template.md` + https://code.claude.com/docs/en/sub-agents
 - Skills: `references/skill-template.md` + https://code.claude.com/docs/en/skills
+- Workflows/Benchs: `references/workflow-template.md`
 
 > Note: URLs are documentation references. Use local template files for creation; use URLs only if WebFetch is available.
 
 Load only the rules file matching the input scope. Do not mix rules files across scopes.
 
-| Input | Rules loaded                   |
-| ----- | ------------------------------ |
-| agent | `references/agent-template.md` |
-| skill | `references/skill-template.md` |
+| Input    | Rules loaded                      |
+| -------- | --------------------------------- |
+| agent    | `references/agent-template.md`    |
+| skill    | `references/skill-template.md`    |
+| workflow | `references/workflow-template.md` |
 
 **Output MUST follow the loaded template.** This is non-negotiable.
 
