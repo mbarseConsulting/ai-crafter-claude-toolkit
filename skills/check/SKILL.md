@@ -3,13 +3,17 @@ name: check
 description: "Use when: (1) verifying nothing was missed in recent work, (2) self-audit against user requests, (3) catching gaps before moving on."
 ---
 
+## OPTIONS
+
+**`--depth N`:** Audit the last N user prompts instead of the default 2-3.
+
 ## BEHAVIOR
 
 ### What you MUST do
 
 #### 1. Gather
 
-Look back at the last 2-3 user prompts and any modifications made (file edits, code changes, responses). Build two lists:
+Look back at the last 2-3 user prompts (or last N if `--depth N` is specified) and any modifications made (file edits, code changes, responses). Build two lists:
 
 - **ASKED:** every explicit request, constraint, preference, and detail mentioned by the user
 - **DONE:** every action taken, change made, or point addressed in response

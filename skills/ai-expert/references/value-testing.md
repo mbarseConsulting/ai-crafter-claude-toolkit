@@ -4,13 +4,11 @@ Test whether an artifact provides measurable value beyond baseline Claude capabi
 
 ## A/B Comparative Testing (Skills & Agents)
 
-Compare Sonnet's output **with** vs **without** the artifact's specialist knowledge.
-
 ### Step 1 — Generate Test Scenario
 
 Based on the artifact's purpose, create a realistic task that the artifact is designed to help with. The scenario must be:
 
-- Specific enough to evaluate (not "do something good")
+- Specific enough to evaluate
 - Representative of the artifact's core use case
 - Completable in a single agent turn
 
@@ -41,12 +39,12 @@ You are a helpful assistant. Complete the following task.
 
 ### Step 3 — Run Parallel Agents
 
-Launch two Task agents (subagent_type: general-purpose, model: sonnet) in parallel:
+Launch two agents in parallel (subagent_type: general-purpose, model: sonnet):
 
 - **Control**: runs the control prompt
 - **Treatment**: runs the treatment prompt
 
-Both agents should produce their full output as text (no tool use needed).
+Both agents should produce their full output as text.
 
 ### Step 4 — Present Results
 

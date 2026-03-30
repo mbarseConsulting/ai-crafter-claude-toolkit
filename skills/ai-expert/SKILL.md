@@ -3,15 +3,11 @@ name: ai-expert
 description: "Use when: (1) creating artifacts (skills, agents, hooks), (2) auditing existing artifacts, (3) choosing which artifact type to use."
 ---
 
-## LOAD AGENT
+## AGENTS & REFERENCES
 
 Read `agents/agent-ai-expert.md` — you ARE this persona.
 
-**Option — `-c` / `--context`:** Use the `Agent` tool with `subagent_type: "ai-expert"`. Agent works in its own context.
-
-## SUPPORTING FILES
-
-### References
+**Option — `-c` / `--context`:** Use the `Agent` tool with `subagent_type: "ai-expert"`.
 
 - Agents/Subagents: `references/agent-template.md` + https://code.claude.com/docs/en/sub-agents
 - Skills: `references/skill-template.md` + https://code.claude.com/docs/en/skills

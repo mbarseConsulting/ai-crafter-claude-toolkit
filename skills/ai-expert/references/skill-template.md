@@ -17,20 +17,15 @@ description: "Use when: (1) [trigger], (2) [trigger], (3) [trigger]"
 tools: [] # Add if needed: [WebFetch, FileRead]
 ---
 
-<!-- ============================================ -->
-<!-- AGENT LOADING: Only for Skill+Agent pattern -->
-<!-- Delete this entire section if Standalone    -->
-<!-- ============================================ -->
+<!-- AGENT LOADING: Skill+Agent only. Delete this section if Standalone. -->
 
 ## LOAD AGENT
 
 Read `agents/{agent-name}.md` — you ARE this persona.
 
-**Option — `-c` / `--context`:** Use the `Agent` tool with `subagent_type: "{agent-name}"`. Agent works in its own context.
+**Option — `-c` / `--context`:** Use the `Agent` tool with `subagent_type: "{agent-name}"`.
 
-<!-- ============================================ -->
 <!-- END AGENT LOADING -->
-<!-- ============================================ -->
 
 ## OPTIONS
 
@@ -42,10 +37,7 @@ Read `agents/{agent-name}.md` — you ARE this persona.
 
 **NONE** — This skill has no configurable options.
 
-<!-- ============================================ -->
-<!-- BEHAVIOR + FOCUS: Only for Standalone        -->
-<!-- Delete if Skill+Agent (agent has its own)    -->
-<!-- ============================================ -->
+<!-- BEHAVIOR + FOCUS: Standalone only. Delete if Skill+Agent (agent has its own). -->
 
 ## BEHAVIOR
 
@@ -65,9 +57,7 @@ Read `agents/{agent-name}.md` — you ARE this persona.
 - [Key aspect 2]
 - [Key aspect 3]
 
-<!-- ============================================ -->
 <!-- END BEHAVIOR + FOCUS -->
-<!-- ============================================ -->
 
 ## SUPPORTING FILES
 
@@ -92,9 +82,7 @@ Read `references/{reference-name}.md` before processing.
 
 **`[TAG]`** — Display this immediately.
 
-<!-- ============================================ -->
-<!-- CHOOSE MODE: Keep ONE, delete the others    -->
-<!-- ============================================ -->
+<!-- CHOOSE MODE: Keep ONE, delete the others. -->
 
 <!-- MODE: ONE-SHOT -->
 
@@ -108,33 +96,21 @@ Read `references/{reference-name}.md` before processing.
 
 **Mode:** One-shot by default. Use `--stay` to keep active.
 
-<!-- ============================================ -->
 <!-- END MODE SELECTION -->
-<!-- ============================================ -->
 
-<!-- ============================================ -->
-<!-- DEACTIVATION: Only for PERSISTENT or HYBRID -->
-<!-- Delete if ONE-SHOT mode                     -->
-<!-- ============================================ -->
+<!-- DEACTIVATION: Only for PERSISTENT or HYBRID. Delete if ONE-SHOT. -->
 
 User says "[keyword 1]", "[keyword 2]", "mode normal" → drop rules, return to default behavior.
 
 Confirm with **`[TAG — OFF]`**.
 
-<!-- ============================================ -->
 <!-- END DEACTIVATION -->
-<!-- ============================================ -->
 
-<!-- ============================================ -->
-<!-- HANDOFF: Optional                           -->
-<!-- Delete if no handoff needed                 -->
-<!-- ============================================ -->
+<!-- HANDOFF: Optional. Delete if no handoff needed. -->
 
 **Handoff:** [context to pass, to whom]
 
-<!-- ============================================ -->
 <!-- END HANDOFF -->
-<!-- ============================================ -->
 ```
 
 ## Frontmatter Fields

@@ -22,13 +22,13 @@ agents/                                    # Symlinks at project root
 .claude/agents → ../agents                 # Symlink for Claude Code discovery
 ```
 
-Multiple crafters are possible (e.g., arena has `agent-straight-arena` + `agent-spark-arena`).
+Multiple crafters supported (e.g., `agent-straight-arena` + `agent-spark-arena`).
 
 ---
 
 ## 1. Skill File (`skill.md`)
 
-The skill carries the **workflow only** — no persona, no behavior. The agent who loads this skill becomes the judge via LOAD AGENT.
+The skill carries the **workflow only** — no persona, no behavior.
 
 ```markdown
 ---
@@ -44,13 +44,10 @@ description: "Use when: (1) [trigger], (2) [trigger], (3) [trigger]"
 |------|--------|
 | `--dry` | [Cadrage/diagnostic only — no execution] |
 
-## LOAD AGENT
+## AGENTS
 
-Read `agents/agent-judge-{workflow}.md` — you ARE this persona.
-
-## SUPPORTING FILES
-
-- Agent AC: `agents/agent-crafter-{workflow}.md` — [role description], launched in Phase [N].
+- **Judge AP:** Read `agents/agent-judge-{workflow}.md` — you ARE this persona.
+- **Crafter AC:** `agents/agent-crafter-{workflow}.md` — [role description], launched in Phase [N].
 
 ## OUTPUT
 
@@ -70,13 +67,15 @@ Read `agents/agent-judge-{workflow}.md` — you ARE this persona.
 
 [Contract template — what user validates before launch.]
 
+Before GATE 0, run `/check` to verify the contract captures all user intentions. Fix gaps before proceeding.
+
 **GATE 0:** User confirms -> launch. User cancels -> **`[TAG — OFF]`**.
 
 ---
 
 ### Phase N — [Craft / Optimization / Generation]
 
-Use the `Agent` tool with `subagent_type: "agent-crafter-{workflow}"`. AC works in its own context.
+Use the `Agent` tool with `subagent_type: "agent-crafter-{workflow}"`.
 **prompt**: [What to include — contract, diagnostic, target, output path.]
 
 **GATE N:** AC delivers -> AP resumes.
@@ -106,7 +105,7 @@ User says "stop", "done", "kill {workflow}" -> [cleanup], **`[TAG — OFF]`**.
 
 ## 2. Judge Agent (`agent-judge-{workflow}.md`)
 
-The judge is the **main agent** — loaded via Read, not spawned. Carries persona, behavior, focus. Never produces the deliverable.
+The judge is the **main agent** — loaded via Read, not spawned. Never produces the deliverable.
 
 ```markdown
 ---
@@ -149,7 +148,7 @@ Invoke `/crit` [and `/steps`, `/other`].
 
 ## 3. Crafter Agent (`agent-crafter-{workflow}.md`)
 
-The crafter is a **subagent** — spawned via Agent tool, works in its own context. Produces the deliverable.
+The crafter is a **subagent** — spawned via Agent tool. Produces the deliverable.
 
 ```markdown
 ---
@@ -195,10 +194,7 @@ Invoke `/crit` [and `/other`].
 
 ### First spawn (Agent tool)
 
-```
-Use the `Agent` tool with `subagent_type: "agent-crafter-{workflow}"`. AC works in its own context.
-**prompt**: [contract, input, output path]
-```
+See Phase N in the skill template above.
 
 For multiple crafters in parallel, use separate `Agent` tool calls in a single message.
 
@@ -229,8 +225,7 @@ ln -s ../skills/{workflow}/agents/agent-crafter-{workflow}.md agents/agent-craft
 
 Before delivery, verify:
 
-- [ ] `skill.md` has LOAD AGENT with Read of judge persona
-- [ ] `skill.md` has SUPPORTING FILES listing all crafter agents
+- [ ] `skill.md` has AGENTS section with Read of judge persona and listing of all crafter agents
 - [ ] `skill.md` has no BEHAVIOR/FOCUS (moved to judge agent)
 - [ ] Judge agent has LOAD SKILLS with required skills
 - [ ] Each crafter agent has LOAD SKILLS with `/crit` + domain skills
