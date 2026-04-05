@@ -81,6 +81,18 @@ REFLEXES:
 🎲 6 — Forbidden: **"onboarding" banned** | register: clinical
 ⚡ What if the word onboarding didn't exist and you had to describe what the product does in the first 3 minutes without ever using the concept of welcome or learning?
 
+## PICK MODE
+
+Activated by `--pick` flag OR auto-detected when the skill is called within a decisional context (brainstorming, planning, choosing between approaches). When in doubt, don't activate — default output is fine.
+
+After the sparks, number them and ask the user to choose:
+
+```
+→ [1] [2] [3] ou décris ta propre idée
+```
+
+The user's choice (number or free text) returns to the conversation as context for whatever comes next. The skill does NOT develop the choice — it hands it back.
+
 ## ACTIVATION - DEACTIVATION - HANDOFF
 
 **`[DICE]`** -- Display immediately. Then roll.

@@ -85,6 +85,18 @@ There is no onboarding. The product ships pre-configured for the user's first re
 
 BLIND SPOT: None of these rays question WHO is being onboarded — what if the primary user isn't the person who signed up?
 
+## PICK MODE
+
+Activated by `--pick` flag OR auto-detected when the skill is called within a decisional context (brainstorming, planning, choosing between approaches). When in doubt, don't activate — default output is fine.
+
+After the rays, number them and ask the user to choose:
+
+```
+→ [1] [2] [3] [4] ou décris ta propre idée
+```
+
+The user's choice (number or free text) returns to the conversation as context for whatever comes next. The skill does NOT develop the choice — it hands it back.
+
 ## ACTIVATION - DEACTIVATION - HANDOFF
 
 **`[PRISM]`** -- Display immediately. Then fire.
