@@ -20,13 +20,15 @@ The goal is to centralize and accelerate the development of reusable AI artifact
 | ----------- | ----------------------------------------------------------------------------------------------- |
 | `ai-expert` | AI artifact crafter — creates, audits, and advises on skills, agents, and hooks                 |
 | `check`     | Self-auditor — compares recent work against user requests, flags missed/partial/parroted items  |
-| `critic`    | Critical challenger — leads with objection, targets structural problems, never validates softly |
+| `context`   | Prompt digester — absorbs heavy prompts, extracts intent, identifies blind spots before action  |
+| `crit`      | Critical challenger — leads with objection, targets structural problems, never validates softly |
+| `grind`     | Effort enforcer — forces maximum reasoning effort on every response, no shortcuts allowed       |
 | `idk`       | Fact checker — searches before answering, cites sources, says "I don't know" when unsure        |
-| `parse`     | Intent translator — blacklists prompt vocabulary, reformulates into AI-optimized instructions   |
+| `parse`     | Intent translator — reformulates human language into AI-optimized instructions                   |
 | `spark`     | Creative provocateur — drops 3-4 unexpected "what if" angles to break predictable thinking      |
 | `steps`     | Precision modifier — chunks long content into ~500-word blocks for granular analysis            |
 
-**7 skills** — 1 crafter, 1 auditor, 1 challenger, 1 fact checker, 1 translator, 1 provocateur, 1 processing modifier
+**9 skills** — 1 crafter, 1 auditor, 1 digester, 1 challenger, 1 enforcer, 1 fact checker, 1 translator, 1 provocateur, 1 processing modifier
 
 ## Usage
 
@@ -43,6 +45,17 @@ Create, audit, or get advice on AI artifacts (skills, agents, hooks).
 
 ---
 
+### `/context`
+
+Digest a heavy prompt before acting — extract intent, scope, blind spots, and recommended next step.
+
+- **default** — compact diagnostic: essence, scope, blind spots, next action
+- **`-d` / `--deep`** — extended diagnostic with dependency mapping and risk assessment
+
+> Single-use. Auto-resets after response.
+
+---
+
 ### `/check`
 
 Self-audit against recent user requests — flags what was missed, half-done, or parroted back.
@@ -53,14 +66,24 @@ Self-audit against recent user requests — flags what was missed, half-done, or
 
 ---
 
-### `/critic`
+### `/crit`
 
 Challenge ideas, claims, or responses with surgical bluntness.
 
 - **default** — biggest problem first, descending severity, no positive ending
 - **`-f` / `--force`** — brutal mode: zero praise, judges against the best in category
 
-> Persistent mode. Deactivate with "relax", "stop critic", "mode normal".
+> Persistent mode. Deactivate with "relax", "stop crit", "normal", "mode normal".
+
+---
+
+### `/grind`
+
+Force maximum reasoning effort — no shortcuts, no first drafts, no filler.
+
+- **default** — every response requires extended deliberation, depth over breadth, committed positions
+
+> Persistent mode. Deactivate with "relax", "stop grind", "normal", "mode normal".
 
 ---
 
@@ -72,7 +95,7 @@ Verify facts before answering — dates, versions, stats, recent events.
 - **`-f` / `--force`** — always search, even if initially certain
 - **`-q` / `--quick`** — skip search for this specific query
 
-> Persistent mode. Deactivate with "trust me", "stop checking", "mode normal".
+> Persistent mode. Deactivate with "trust me", "stop idk", "normal", "mode normal".
 
 ---
 
@@ -80,8 +103,9 @@ Verify facts before answering — dates, versions, stats, recent events.
 
 Reformulate human language into AI-optimized instructions before writing to files.
 
-- **default** — blacklists prompt vocabulary, reformulates silently, outputs result directly
+- **default** — reformulates silently, outputs result directly
 - **`-s` / `--show`** — displays intermediate steps (intent, gap, reformulation) before writing
+- **`-b` / `--blacklist`** — activates vocabulary blacklist: zero reuse of original prompt words
 
 > Single-use. Auto-resets after response.
 
@@ -94,7 +118,7 @@ Break predictable thinking with unexpected creative angles.
 - **default** — 3-4 contextual provocations, no explanation, no justification
 - **"surprise me"** — uses available context (conversation, files, project)
 
-> Persistent mode. Deactivate with "stop", "merci", "mode normal".
+> Persistent mode. Deactivate with "stop spark", "merci", "normal", "mode normal".
 
 ---
 
